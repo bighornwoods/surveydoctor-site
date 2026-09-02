@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SurveyDoctor — REDCap data-dictionary diagnostics</title>
+    <meta
+      name="description"
+      content="Desktop app for REDCap metadata. Load a CSV or API dictionary, review diagnostics, Accept findings, or export a patch. Metadata only. Paid pre-release."
+    />
+    <link rel="canonical" href="https://surveydoctorapp.com/" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <meta property="og:title" content="SurveyDoctor" />
+    <meta
+      property="og:description"
+      content="Interactive diagnostics for REDCap data dictionaries. Metadata only. Runs on your machine."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://surveydoctorapp.com/" />
+    <meta property="og:image" content="https://surveydoctorapp.com/assets/app-light-1600.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/">
+        <img src="assets/icon.png" width="28" height="28" alt="" />
+        SurveyDoctor
+      </a>
+      <div class="pills">
+        <span class="pill accent">Pre-release</span>
+        <span class="pill">Paid · not open source</span>
+      </div>
+      <div class="topbar-right">
+        <a href="mailto:hello@surveydoctorapp.com">hello@surveydoctorapp.com</a>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="lede">
+        <div class="lede-main">
+          <p class="kicker">Desktop workbench</p>
+          <h1>Diagnostics for REDCap data dictionaries</h1>
+          <p>
+            Load a dictionary. Select a field. The table, the minimap, and the
+            issue list move together. Accept what is intentional. Export a CSV
+            patch when it is not.
+          </p>
+          <p>
+            Built for REDCap admins, data managers, and people who live in large
+            instruments. Not a REDCap replacement. Not Online Designer.
+          </p>
+          <a
+            class="cta"
+            href="mailto:hello@surveydoctorapp.com?subject=SurveyDoctor%20access"
+            >Request access</a
+          >
+          <span class="cta-note"
+            >No public download yet. Email if you have a dictionary you want to
+            run through it.</span
+          >
+        </div>
+        <div class="lede-side">
+          <p class="kicker">On your machine</p>
+          <p>
+            Dictionaries stay local. REDCap API tokens stay in memory for the
+            session and are not written to disk. No records. No PHI. No
+            write-back to the server.
+          </p>
+        </div>
+      </section>
+
+      <figure class="shot">
+        <img
+          src="assets/app-light-1600.jpg"
+          srcset="assets/app-light-1600.jpg 1600w, assets/app-light.jpg 2560w"
+          sizes="(max-width: 1080px) 100vw, 1080px"
+          width="1600"
+          height="900"
+          alt="SurveyDoctor triptych: metadata table, issue minimap, and field diagnostics on a tutorial dictionary."
+        />
+        <figcaption>
+          Table + minimap + diagnostics. Selecting a field updates all three.
+        </figcaption>
+      </figure>
+
+      <div class="grid">
+        <section class="panel">
+          <h2>Does</h2>
+          <ul>
+            <li>
+              CSV ingest
+              <span>Standard REDCap data-dictionary export.</span>
+            </li>
+            <li>
+              REDCap API metadata
+              <span><code>content=metadata</code> only. Token is session-only.</span>
+            </li>
+            <li>
+              Structure diagnostics
+              <span>Branching, embedding, hidden fields, catalog + Accept.</span>
+            </li>
+            <li>
+              Optional Edit
+              <span>Patch a working copy and export CSV. Not a form builder.</span>
+            </li>
+          </ul>
+        </section>
+        <section class="panel">
+          <h2>Does not</h2>
+          <ul>
+            <li>
+              Records or PHI
+              <span>No participant data. No DuckDB. No query of values.</span>
+            </li>
+            <li>
+              Write-back to REDCap
+              <span>You export a CSV and upload it yourself, if you choose.</span>
+            </li>
+            <li>
+              Replace Online Designer
+              <span>Authoring is surgical patches, not a second designer.</span>
+            </li>
+            <li>
+              Open source
+              <span>Proprietary paid product. Source is not on GitHub.</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <table class="specs">
+        <tbody>
+          <tr>
+            <th>Platforms</th>
+            <td>
+              Windows 11 x64 (<code>setup.exe</code>) and macOS Apple Silicon
+              (<code>.dmg</code>). Intel Mac is not built yet.
+            </td>
+          </tr>
+          <tr>
+            <th>Installers</th>
+            <td>
+              Unsigned. Windows: SmartScreen → More info → Run anyway. macOS:
+              right-click the app → Open the first time.
+            </td>
+          </tr>
+          <tr>
+            <th>Price</th>
+            <td>
+              Paid subscription (annual). Checkout is not public yet — request
+              access and we will send terms + installers.
+            </td>
+          </tr>
+          <tr>
+            <th>License</th>
+            <td>
+              Commercial. All rights reserved. Not MIT. A customer EULA ships
+              with a paid seat; this page is not that contract.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <section class="warn">
+        <h2>Honest limits</h2>
+        <p>
+          This is a pre-release you can already use on a real dictionary. It is
+          not a signed store build. Hospital IT may block unsigned apps. If that
+          is a deal-breaker, say so in the email.
+        </p>
+        <p>
+          SurveyDoctor is independent of Vanderbilt / REDCap Consortium. Not
+          affiliated, not endorsed.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>© 2026 SurveyDoctor. All rights reserved.</span>
+        <span>No analytics on this page. Dictionaries never leave your machine.</span>
+      </div>
+    </footer>
+  </body>
+</html>
