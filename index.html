@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SurveyDoctor — diagnostics for REDCap data dictionaries</title>
+    <title>SurveyDoctor — cleaner REDCap surveys, starting with the dictionary</title>
     <meta
       name="description"
-      content="SurveyDoctor is a desktop app for reviewing REDCap data dictionaries. Load a CSV or connect to a project, see branching and structure issues in context, and export a cleaned dictionary. Metadata only; it runs on your machine."
+      content="SurveyDoctor helps REDCap surveys collect cleaner data. Review existing metadata, find what could be improved, reuse useful patterns consistently, and take fixes back into the project. Desktop app; dictionaries stay on your machine."
     />
     <link rel="canonical" href="https://surveydoctorapp.com/" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
@@ -14,7 +14,7 @@
     <meta property="og:title" content="SurveyDoctor" />
     <meta
       property="og:description"
-      content="A desktop workbench for REDCap data dictionaries. See structure issues in context. Metadata stays on your machine."
+      content="Review REDCap survey metadata, use useful patterns consistently, and improve the instrument so the data you collect is cleaner."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://surveydoctorapp.com/" />
@@ -45,19 +45,19 @@
     <main class="shell">
       <section class="lede">
         <div class="lede-main">
-          <p class="kicker">For REDCap instruments</p>
-          <h1>See the dictionary, the problems, and the field you are on — at the same time.</h1>
+          <p class="kicker">For REDCap surveys</p>
+          <h1>Cleaner data starts with a cleaner instrument.</h1>
           <p>
-            SurveyDoctor is a desktop app for people who build and maintain
-            REDCap projects. You load a data dictionary, click a field, and the
-            table, the minimap, and the diagnostics pane all stay with you. It
-            is meant for large, messy instruments — the ones that are hard to
-            review one field at a time in Online Designer.
+            SurveyDoctor’s job is to help your survey collect better data — by
+            reviewing the metadata you already have, showing where the
+            instrument could be stronger, and helping you make those
+            improvements. Along the way it makes useful REDCap patterns visible
+            so you can apply them consistently, instead of rediscovering them
+            field by field.
           </p>
           <p>
-            It does not replace REDCap. It sits next to it: find issues in the
-            metadata, decide what is intentional, and export a CSV if you want
-            to take a fix back to the project.
+            It is a desktop app that sits next to REDCap, not a replacement for
+            it. You still decide what goes back into the project.
           </p>
           <a
             class="cta"
@@ -99,25 +99,27 @@
       <section class="prose">
         <h2>What it is for</h2>
         <p>
-          REDCap admins, data managers, and anyone who has inherited a
-          complicated instrument. Typical jobs: a go-live review, a dictionary
-          that came back from another team, branching that “should work,” or
-          piped text that disappeared on the survey.
+          Built for REDCap admins, data managers, and anyone who has inherited
+          a complicated instrument. You load a data-dictionary CSV or connect
+          to a project and pull the current metadata. SurveyDoctor reviews that
+          dictionary — branching, embedded text, hidden fields, missing
+          choices, and similar design problems — and shows each finding next
+          to the field it belongs to, with a plain-language explanation of why
+          it matters.
         </p>
         <p>
-          You can start from a standard data-dictionary CSV, or connect to a
-          project and pull the current metadata. SurveyDoctor then checks
-          structure — branching logic, embedded fields, hidden fields, missing
-          choices, and similar design problems — and lists them next to the
-          field they belong to. Each issue is explained in plain language, with
-          why it matters and what you might do about it. Findings you mean to
-          keep can be marked accepted so they do not keep shouting.
+          The point is not a red/green score. Some “issues” are intentional;
+          you can accept those so they stop shouting. Others are real
+          improvements: a branching expression that will hide a question you
+          still need, piped text that never appears, a pattern used in one
+          form and forgotten in the next. Optional Edit mode lets you make
+          small local patches and export a CSV. That is not a second Online
+          Designer — you choose what, if anything, goes back into REDCap.
         </p>
         <p>
-          There is an optional Edit mode for small, local patches (a label, a
-          branching expression) and an export of the working copy as CSV. That
-          is not a second Online Designer. You still decide what, if anything,
-          goes back into REDCap.
+          Click a field and the table, the minimap, and the diagnostics stay
+          together. That is how you actually review a large instrument, instead
+          of hopping through Online Designer one variable at a time.
         </p>
       </section>
 
