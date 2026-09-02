@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SurveyDoctor — REDCap data-dictionary diagnostics</title>
+    <title>SurveyDoctor — diagnostics for REDCap data dictionaries</title>
     <meta
       name="description"
-      content="Desktop app for REDCap metadata. Load a CSV or API dictionary, review diagnostics, Accept findings, or export a patch. Metadata only. Paid pre-release."
+      content="SurveyDoctor is a desktop app for reviewing REDCap data dictionaries. Load a CSV or connect to a project, see branching and structure issues in context, and export a cleaned dictionary. Metadata only; it runs on your machine."
     />
     <link rel="canonical" href="https://surveydoctorapp.com/" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
@@ -14,7 +14,7 @@
     <meta property="og:title" content="SurveyDoctor" />
     <meta
       property="og:description"
-      content="Interactive diagnostics for REDCap data dictionaries. Metadata only. Runs on your machine."
+      content="A desktop workbench for REDCap data dictionaries. See structure issues in context. Metadata stays on your machine."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://surveydoctorapp.com/" />
@@ -35,7 +35,7 @@
       </a>
       <div class="pills">
         <span class="pill accent">Pre-release</span>
-        <span class="pill">Paid · not open source</span>
+        <span class="pill">Desktop app</span>
       </div>
       <div class="topbar-right">
         <a href="mailto:hello@surveydoctorapp.com">hello@surveydoctorapp.com</a>
@@ -45,33 +45,38 @@
     <main class="shell">
       <section class="lede">
         <div class="lede-main">
-          <p class="kicker">Desktop workbench</p>
-          <h1>Diagnostics for REDCap data dictionaries</h1>
+          <p class="kicker">For REDCap instruments</p>
+          <h1>See the dictionary, the problems, and the field you are on — at the same time.</h1>
           <p>
-            Load a dictionary. Select a field. The table, the minimap, and the
-            issue list move together. Accept what is intentional. Export a CSV
-            patch when it is not.
+            SurveyDoctor is a desktop app for people who build and maintain
+            REDCap projects. You load a data dictionary, click a field, and the
+            table, the minimap, and the diagnostics pane all stay with you. It
+            is meant for large, messy instruments — the ones that are hard to
+            review one field at a time in Online Designer.
           </p>
           <p>
-            Built for REDCap admins, data managers, and people who live in large
-            instruments. Not a REDCap replacement. Not Online Designer.
+            It does not replace REDCap. It sits next to it: find issues in the
+            metadata, decide what is intentional, and export a CSV if you want
+            to take a fix back to the project.
           </p>
           <a
             class="cta"
             href="mailto:hello@surveydoctorapp.com?subject=SurveyDoctor%20access"
-            >Request access</a
+            >Ask about access</a
           >
           <span class="cta-note"
-            >No public download yet. Email if you have a dictionary you want to
-            run through it.</span
+            >There is no public download yet. If you have a dictionary you would
+            like to run through it, email me and I will send the current
+            installers.</span
           >
         </div>
         <div class="lede-side">
-          <p class="kicker">On your machine</p>
+          <p class="kicker">Stays on your computer</p>
           <p>
-            Dictionaries stay local. REDCap API tokens stay in memory for the
-            session and are not written to disk. No records. No PHI. No
-            write-back to the server.
+            The dictionary is opened locally. If you connect to REDCap, only
+            metadata is requested — not records, not participants. The API token
+            lives in memory for that session and is not saved to disk. Nothing
+            is written back to the server.
           </p>
         </div>
       </section>
@@ -83,109 +88,93 @@
           sizes="(max-width: 1080px) 100vw, 1080px"
           width="1600"
           height="900"
-          alt="SurveyDoctor triptych: metadata table, issue minimap, and field diagnostics on a tutorial dictionary."
+          alt="SurveyDoctor showing a tutorial dictionary: metadata table in the center, issue minimap on the left, and field diagnostics on the right."
         />
         <figcaption>
-          Table + minimap + diagnostics. Selecting a field updates all three.
+          Selecting a field updates the table, the minimap, and the diagnostics
+          together.
         </figcaption>
       </figure>
 
-      <div class="grid">
-        <section class="panel">
-          <h2>Does</h2>
-          <ul>
-            <li>
-              CSV ingest
-              <span>Standard REDCap data-dictionary export.</span>
-            </li>
-            <li>
-              REDCap API metadata
-              <span><code>content=metadata</code> only. Token is session-only.</span>
-            </li>
-            <li>
-              Structure diagnostics
-              <span>Branching, embedding, hidden fields, catalog + Accept.</span>
-            </li>
-            <li>
-              Optional Edit
-              <span>Patch a working copy and export CSV. Not a form builder.</span>
-            </li>
-          </ul>
-        </section>
-        <section class="panel">
-          <h2>Does not</h2>
-          <ul>
-            <li>
-              Records or PHI
-              <span>No participant data. No DuckDB. No query of values.</span>
-            </li>
-            <li>
-              Write-back to REDCap
-              <span>You export a CSV and upload it yourself, if you choose.</span>
-            </li>
-            <li>
-              Replace Online Designer
-              <span>Authoring is surgical patches, not a second designer.</span>
-            </li>
-            <li>
-              Open source
-              <span>Proprietary paid product. Source is not on GitHub.</span>
-            </li>
-          </ul>
-        </section>
-      </div>
+      <section class="prose">
+        <h2>What it is for</h2>
+        <p>
+          REDCap admins, data managers, and anyone who has inherited a
+          complicated instrument. Typical jobs: a go-live review, a dictionary
+          that came back from another team, branching that “should work,” or
+          piped text that disappeared on the survey.
+        </p>
+        <p>
+          You can start from a standard data-dictionary CSV, or connect to a
+          project and pull the current metadata. SurveyDoctor then checks
+          structure — branching logic, embedded fields, hidden fields, missing
+          choices, and similar design problems — and lists them next to the
+          field they belong to. Each issue is explained in plain language, with
+          why it matters and what you might do about it. Findings you mean to
+          keep can be marked accepted so they do not keep shouting.
+        </p>
+        <p>
+          There is an optional Edit mode for small, local patches (a label, a
+          branching expression) and an export of the working copy as CSV. That
+          is not a second Online Designer. You still decide what, if anything,
+          goes back into REDCap.
+        </p>
+      </section>
+
+      <section class="prose">
+        <h2>What it is not</h2>
+        <p>
+          It does not open records or any participant data. It does not upload
+          changes to REDCap for you. It is not a survey platform, and it is not
+          open source — SurveyDoctor is a paid product, currently in
+          pre-release.
+        </p>
+        <p>
+          Installers are unsigned for now. On Windows 11, SmartScreen will warn
+          you; choose More info, then Run anyway. On a Mac, right-click the app
+          and choose Open the first time. Apple Silicon only at the moment
+          (Windows is x64). Hospital IT may block unsigned software; if that is
+          a hard stop, say so in the email.
+        </p>
+        <p>
+          SurveyDoctor is independent software. It is not affiliated with or
+          endorsed by Vanderbilt or the REDCap Consortium.
+        </p>
+      </section>
 
       <table class="specs">
         <tbody>
           <tr>
-            <th>Platforms</th>
+            <th>Runs on</th>
             <td>
-              Windows 11 x64 (<code>setup.exe</code>) and macOS Apple Silicon
-              (<code>.dmg</code>). Intel Mac is not built yet.
+              Windows 11 (x64) and macOS on Apple Silicon. An Intel Mac build
+              is not available yet.
             </td>
           </tr>
           <tr>
-            <th>Installers</th>
+            <th>How you get it</th>
             <td>
-              Unsigned. Windows: SmartScreen → More info → Run anyway. macOS:
-              right-click the app → Open the first time.
+              Email
+              <a href="mailto:hello@surveydoctorapp.com">hello@surveydoctorapp.com</a>.
+              I will send the current installers. There is no self-serve
+              download on this page.
             </td>
           </tr>
           <tr>
             <th>Price</th>
             <td>
-              Paid subscription (annual). Checkout is not public yet — request
-              access and we will send terms + installers.
-            </td>
-          </tr>
-          <tr>
-            <th>License</th>
-            <td>
-              Commercial. All rights reserved. Not MIT. A customer EULA ships
-              with a paid seat; this page is not that contract.
+              It will be an annual subscription. Checkout is not open yet; if
+              you want to use it, we can sort terms over email.
             </td>
           </tr>
         </tbody>
       </table>
-
-      <section class="warn">
-        <h2>Honest limits</h2>
-        <p>
-          This is a pre-release you can already use on a real dictionary. It is
-          not a signed store build. Hospital IT may block unsigned apps. If that
-          is a deal-breaker, say so in the email.
-        </p>
-        <p>
-          SurveyDoctor is independent of Vanderbilt / REDCap Consortium. Not
-          affiliated, not endorsed.
-        </p>
-      </section>
     </main>
 
     <footer class="footer">
       <div class="footer-inner">
-        <span>© 2026 SurveyDoctor. All rights reserved.</span>
-        <span>No analytics on this page. Dictionaries never leave your machine.</span>
+        <span>© 2026 Christopher Sutton. All rights reserved.</span>
+        <span>This page has no analytics. Dictionaries stay on your machine.</span>
       </div>
     </footer>
   </body>
