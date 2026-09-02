@@ -287,6 +287,39 @@ h1 {
   flex-wrap: wrap;
   gap: 8px 16px;
   justify-content: space-between;
+  align-items: baseline;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+.footer-nav a {
+  color: var(--subtle);
+}
+
+.legal .prose {
+  max-width: 40rem;
+}
+
+.legal .prose h2 {
+  margin-top: 18px;
+}
+
+.legal .prose h2:first-child {
+  margin-top: 0;
+}
+
+.legal .prose ul {
+  margin: 10px 0 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.legal .prose li + li {
+  margin-top: 6px;
 }
 
 @media (max-width: 800px) {
